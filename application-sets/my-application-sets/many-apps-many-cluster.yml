@@ -27,3 +27,10 @@ spec:
       destination:
         server: '{{server}}'
         namespace: '{{path.basename}}'
+      # 🚨 ADDED: Sync Policy for auto-sync, self-heal, and createNamespace
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
